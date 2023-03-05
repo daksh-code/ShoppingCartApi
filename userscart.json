@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "userId": 456,
+            "cart": [
+                {
+                    "productId": "001",
+                    "quantity": 2
+                },
+                {
+                    "productId": "002",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "userId": 234,
+            "cart": [
+                {
+                    "productId": "001",
+                    "quantity": 1
+                },
+                {
+                    "productId": "003",
+                    "quantity": 3
+                }
+            ]
+        },
+        {
+            "userId": 1,
+            "cart": [
+                {
+                    "productId": 12,
+                    "quantity": 21
+                },
+                {
+                    "productId": 5,
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}
