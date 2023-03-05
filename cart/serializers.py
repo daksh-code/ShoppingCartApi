@@ -1,3 +1,4 @@
+from unicodedata import name
 from rest_framework import serializers
 
 class ProductSerializer(serializers.Serializer):
@@ -17,3 +18,8 @@ class CartUpdateSerializer(serializers.Serializer):
 
 class ApplyCouponSerializer(serializers.Serializer):
     coupon_code = serializers.CharField()
+
+class AddCouponSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    min_order_value = serializers.FloatField()
+    discount_percent = serializers.IntegerField()

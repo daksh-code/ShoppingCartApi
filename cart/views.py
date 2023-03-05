@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .serializers import CartUpdateSerializer, ProductSerializer,AddToCartSerializer,ApplyCouponSerializer
+from .serializers import AddCouponSerializer, CartUpdateSerializer, ProductSerializer,AddToCartSerializer,ApplyCouponSerializer
 from rest_framework.permissions import BasePermission
 from authentication.backends import JWTAuthentication
 
@@ -25,6 +25,8 @@ class ProductCreateView(APIView):
     authentication_classes=[JWTAuthentication]
     permission_classes = [MyCustomPermission]
     def post(self, request):
+        if self.request.user['userId']!=1:
+            return Response({'error': 'You need Admin Privilage'})
         serializer = ProductSerializer(data=request.data)    # Deserialize the request data into a ProductSerializer object
         user_id = self.request.user['userId']
         print(user_id,"   USER_ID___________")
@@ -262,3 +264,28 @@ class ApplyCouponView(APIView):
 
 
 
+class AddCouponView(APIView):
+    authentication_classes=[JWTAuthentication]
+    permission_classes=[MyCustomPermission]
+    def post(self, request):
+        if self.request.user['userId']!=1:
+            return Response({'error': 'You need Admin Privilage'})
+        # Load the existing coupons from the file
+        with open('coupons.json', 'r') as f:
+            coupons_data = json.load(f)
+
+        # Deserialize the request data into a CouponSerializer object
+        serializer = AddCouponSerializer(data=json.loads(request.body))
+        if serializer.is_valid():
+            # Add the new coupon to the list of existing coupons
+            coupons_data['coupons'].append(serializer.validated_data)
+
+            # Write the updated coupons list back to the file
+            with open('coupons.json', 'w') as f:
+                json.dump(coupons_data, f, indent=4)
+
+            # Return a success response with the new coupon data
+            return Response(serializer.validated_data, status=status.HTTP_201_CREATED)
+        else:
+            # Return an error response with the validation errors
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

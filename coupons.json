@@ -1,19 +1,24 @@
 {
     "coupons": [
-      {
-        "name": "SALE20",
-        "min_order_value": 50.00,
-        "discount_percent": 20
-      },
-      {
-        "name": "BUNDLE10",
-        "min_order_value": 100.00,
-        "discount_percent": 10
-      },
-      {
-        "name": "FREESHIPPING",
-        "min_order_value": 75.00,
-        "discount_percent": 100
-      }
+        {
+            "name": "SALE20",
+            "min_order_value": 50.0,
+            "discount_percent": 20
+        },
+        {
+            "name": "BUNDLE10",
+            "min_order_value": 100.0,
+            "discount_percent": 10
+        },
+        {
+            "name": "FREESHIPPING",
+            "min_order_value": 75.0,
+            "discount_percent": 100
+        },
+        {
+            "name": "TOTAL50",
+            "min_order_value": 100.0,
+            "discount_percent": 10
+        }
     ]
-  }
+}
