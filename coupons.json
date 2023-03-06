@@ -19,6 +19,16 @@
             "name": "TOTAL50",
             "min_order_value": 100.0,
             "discount_percent": 10
+        },
+        {
+            "name": "FREE10",
+            "min_order_value": 10.0,
+            "discount_percent": 10
+        },
+        {
+            "name": "FREE10",
+            "min_order_value": 10.0,
+            "discount_percent": 10
         }
     ]
 }

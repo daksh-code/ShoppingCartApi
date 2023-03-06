@@ -1,69 +1,6 @@
 {
     "products": [
         {
-            "productId": 1,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 2,
-            "image": "ebacjkbcjkaca",
-            "name": "Product 2",
-            "unit_price": 19.99,
-            "quantity": 50
-        },
-        {
-            "productId": 3,
-            "image": "cbajkbckjabcdjkabc",
-            "name": "Product 3",
-            "unit_price": 7.99,
-            "quantity": 200
-        },
-        {
-            "productId": 5,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 6,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 7,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 8,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 9,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
-            "productId": 10,
-            "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
-            "unit_price": 10.99,
-            "quantity": 100
-        },
-        {
             "productId": 11,
             "image": "subevkabeiabcebajecjkabcjkabeakj",
             "name": "Product 1",
@@ -73,8 +10,22 @@
         {
             "productId": 12,
             "image": "subevkabeiabcebajecjkabcjkabeakj",
-            "name": "Product 1",
+            "name": "Product 2",
             "unit_price": 13.0,
+            "quantity": 100
+        },
+        {
+            "productId": 13,
+            "image": "subevkabeiabcebajecjkabcjkabeakj",
+            "name": "Product 3",
+            "unit_price": 15.0,
+            "quantity": 100
+        },
+        {
+            "productId": 14,
+            "image": "subevkabeiabcebajecjkabcjkabeakj",
+            "name": "Product 4",
+            "unit_price": 20.0,
             "quantity": 100
         }
     ]

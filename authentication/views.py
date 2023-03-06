@@ -12,10 +12,13 @@ from authentication.serializers import UserSerializer
 import json
 
 class LoginView(APIView):
-    serializer_class = LoginSerializer                #deserialize the incoming data i.e converts the json data to python datatype to later can be stores in database
+    #deserialize the incoming data i.e converts the json data to python datatype to later can be stores in database
+    serializer_class = LoginSerializer                
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)     #initializing serializer     
-        serializer.is_valid(raise_exception=True)                #validating username and password using LoginSerializer     
+        #initializing serializer
+        serializer = self.serializer_class(data=request.data)    
+        #validating username and password using LoginSerializer       
+        serializer.is_valid(raise_exception=True)                    
         user = serializer.validated_data
         print(user,"AAA")
         token = jwt.encode({
@@ -30,14 +33,14 @@ class RegistrationView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)    # Deserialize the request data into a UserSerializer object
         if serializer.is_valid():
-            # Open the users JSON file and load its contents into a dictionary
+            # open the users JSON file and load its contents into a dictionary
             with open('users.json', 'r') as f:
                 users = json.load(f)
 
-            # Generate a new user ID by incrementing the last user ID in the list
+            # generate a new user ID by incrementing the last user ID in the list
             user_id = users['users'][-1]['userId'] + 1
 
-            # Add the new user to the dictionary
+            # add the new user to the dictionary
             new_user = {
                 'userId': user_id,
                 'username': serializer.validated_data['username'],
@@ -45,14 +48,14 @@ class RegistrationView(APIView):
             }
             users['users'].append(new_user)
 
-            # Write the updated dictionary back to the JSON file
+            # write the updated dictionary back to the JSON file
             with open('users.json', 'w') as f:
                 json.dump(users, f, indent=4)
 
-            # Return a success response with the new user ID
+            # return a success response with the new user ID
             return Response({'userId': user_id}, status=status.HTTP_201_CREATED)
         else:
-            # Return an error response with the validation errors
+            # return an error response with the validation errors
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

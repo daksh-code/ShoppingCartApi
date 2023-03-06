@@ -1,32 +1,6 @@
 {
     "users": [
         {
-            "userId": 456,
-            "cart": [
-                {
-                    "productId": "001",
-                    "quantity": 2
-                },
-                {
-                    "productId": "002",
-                    "quantity": 1
-                }
-            ]
-        },
-        {
-            "userId": 234,
-            "cart": [
-                {
-                    "productId": "001",
-                    "quantity": 1
-                },
-                {
-                    "productId": "003",
-                    "quantity": 3
-                }
-            ]
-        },
-        {
             "userId": 1,
             "cart": [
                 {
@@ -34,8 +8,21 @@
                     "quantity": 21
                 },
                 {
-                    "productId": 5,
+                    "productId": 11,
                     "quantity": 1
+                }
+            ]
+        },
+        {
+            "userId": 2,
+            "cart": [
+                {
+                    "productId": 13,
+                    "quantity": 2
+                },
+                {
+                    "productId": 11,
+                    "quantity": 2
                 }
             ]
         }

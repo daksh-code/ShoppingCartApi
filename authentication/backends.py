@@ -7,6 +7,7 @@ import json
 class JWTAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
         print("HELLOOOOOOOOOOOOOO")
+        #get header data
         auth_data = authentication.get_authorization_header(request)
         print(len(auth_data),"auth_data_____________")
     
@@ -26,7 +27,8 @@ class JWTAuthentication(authentication.BaseAuthentication):
             with open('users.json') as f:
                 users = json.load(f)['users']
                 user = None
-                for u in users:                                          #checks whether the user is present in users.json or not 
+                for u in users:                                          
+                    #checks whether the user is present in users.json or not 
                     if u['username'] == payload['username']:
                         user = u
                         print(user,"ASDFDDSDSDSASASASASDSEDDSDSSDDSDSDSDSDSDSDS")
